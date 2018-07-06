@@ -1,0 +1,14 @@
+<div *ngIf='hero$ | async as hero; else loading'>
+  -------------------------
+  <h4>Hero Detail</h4> <br/>
+  <label>Hero id:  </label>{{hero.id}}
+  |
+  <label>Hero Name: </label> {{hero.name}}
+  --------------------------
+
+
+
+<button (click)="back(hero)" type="button" class="btn btn-primary">Back</button>
+<button (click)="save(hero)" type="button" class="btn btn-info">Save</button>
+
+</div>

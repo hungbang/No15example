@@ -1,0 +1,21 @@
+<div>
+  <h2>HEROES</h2>
+    <ul class="items">
+      <li *ngFor="let hero of heroes$ | async"
+        [class.selected]="hero.id === selectedId">
+
+
+        <a href="#" type="button" (click)='gotoHeroDetail(hero)'>
+          <span class="badge">{{ hero.id }}</span>{{ hero.name }}
+        </a>
+
+
+      </li>
+    </ul>
+</div>
+<div *ngIf="isDisplayDetail == true">
+    <app-hero-list-detail [id]='selectedId' (change)="changeStatus($event)" ></app-hero-list-detail>
+
+</div>
+
+    <button routerLink="/sidekicks">Go to sidekicks</button>
